@@ -1,0 +1,114 @@
+Date,Description,Amount,Type,Category
+2026-01-01,Salary credited from CypherSOL,60000.0,CREDIT,Salary
+2026-01-01,Zomato,,DEBIT,Take-out
+2026-01-01,CityFlo,,DEBIT,Transport
+2026,Flipkart,1838.18,DEBIT,Shopping
+Jan-1,Credit Card Bill,1642.72,DEBIT,Interest-Payments
+1st January,Loan Bill,658.7,DEBIT,Interest-Payments
+2026-01-01,Fresh Fruits & Veg Co.,719.82,charge,Groceries
+2026-01-01,Flipkart,1382.85,charge,Shopping
+
+
+2026-02-01,Swiggy,1107.8,DEBIT,Take-out
+2026-02-01,Flipkart,1887.44,DEBIT,Shopping
+
+
+2026-02-01,Electricity,1113.02,DEBIT,Utilities
+2026-02-01,Electricity,1534.24,DEBIT,Utilities
+2026-02-01,Wifi-bill,382.22,DEBIT,Utilities
+2026-02-01,Swiggy,1395.02,DEBIT,Take-out
+2026-02-01,Loan Bill,1878.93,DEBIT,Interest-Payments
+2026-02-01,Credit Card Bill,1370.84,DEBIT,Interest-Payments
+2026-02-01,Ram's General store,1823.22,DEBIT,Groceries
+2026-02-01,Amazon Mrktplace,705.07,DEBIT,Shopping
+2026-02-02,Ram's General store,404.02,DEBIT,Groceries
+2026-02-02,Swiggy,971.13,DEBIT,Take-out
+2026-02-02,Swiggy,946.96,DEBIT,Take-out
+2026-02-02,Uber,710.93,DEBIT,Transport
+2026-02-02,Fresh Fruits & Veg Co.,379.59,DEBIT,Groceries
+2026-02-02,Loan Bill,1937.83,DEBIT,Interest-Payments
+2026-02-02,Zomato,211.74,DEBIT,Take-out
+2026-03-01,Salary credited from CypherSOL,60000.0,CREDIT,Salary
+2026-03-01,Amazon Mrktplace,1450.62,DEBIT,Shopping
+2026-03-01,Uber,1160.34,DEBIT,Transport
+2026-03-01,Loan Bill,678.88,DEBIT,Interest-Payments
+2026-03-01,Ola,690.03,DEBIT,Transport
+2026-03-01,Amazon Mrktplace,1023.5,DEBIT,Shopping
+2026-03-01,Loan Bill,1408.07,DEBIT,Interest-Payments
+2026-03-01,Big Bazar Retail,1745.82,DEBIT,Groceries
+2026-03-01,Loan Bill,1826.21,DEBIT,Interest-Payments
+2026-03-01,Swiggy,623.15,DEBIT,Take-out
+2026-03-01,Credit Card Bill,425.07,DEBIT,Interest-Payments
+2026-03-01,Swiggy,913.07,DEBIT,Take-out
+2026-03-02,Fresh Fruits & Veg Co.,905.56,DEBIT,Groceries
+2026-03-02,Swiggy,1777.04,DEBIT,Take-out
+2026-03-02,Big Bazar Retail,271.39,DEBIT,Groceries
+2026-03-02,Gas,1661.31,DEBIT,Utilities
+2026-03-02,Ola,1830.63,DEBIT,Transport
+2026-03-02,Ram's General store,1020.08,DEBIT,Groceries
+2026-03-02,Zomato,1679.61,DEBIT,Take-out
+2026-03-02,Big Bazar Retail,857.06,DEBIT,Groceries
+2026-03-02,Fresh Fruits & Veg Co.,1633.71,DEBIT,Groceries
+2026-03-02,Zomato,1382.13,DEBIT,Take-out
+2026-03-02,Flipkart,404.43,DEBIT,Shopping
+2026-03-02,Ram's General store,1797.76,DEBIT,Groceries
+2026-03-02,Amazon Mrktplace,1529.41,DEBIT,Shopping
+2026-03-02,Amazon Mrktplace,417.45,DEBIT,Shopping
+2026-03-03,Credit Card Bill,720.07,DEBIT,Interest-Payments
+2026-04-04,Ram's General store,1762.78,DEBIT,Groceries
+2026-04-04,Amazon Mrktplace,349.8,DEBIT,Shopping
+2026-04-04,Zomato,1668.66,DEBIT,Take-out
+2026-04-05,Ram's General store,1007.97,DEBIT,Groceries
+2026-04-05,Zomato,1869.49,DEBIT,Take-out
+2026-04-05,Credit Card Bill,1090.42,DEBIT,Interest-Payments
+2026-04-05,Loan Bill,1578.33,DEBIT,Interest-Payments
+2026-04-05,Gas,942.43,DEBIT,Utilities
+2026-04-05,Ola,1972.98,DEBIT,Transport
+2026-04-05,Uber,897.68,DEBIT,Transport
+2026-04-05,CityFlo,692.46,DEBIT,Transport
+2026-04-05,Amazon Mrktplace,258.78,DEBIT,Shopping
+2026-04-06,Zomato,1845.76,DEBIT,Take-out
+2026-04-06,CityFlo,937.75,DEBIT,Transport
+2026-04-06,Big Bazar Retail,319.21,DEBIT,Groceries
+2026-04-06,Credit Card Bill,267.96,DEBIT,Interest-Payments
+2026-04-06,Swiggy,1099.2,DEBIT,Take-out
+2026-04-06,Uber,986.14,DEBIT,Transport
+2026-05-10,Loan Bill,540.27,DEBIT,Interest-Payments
+2026-05-10,Electricity,1378.31,DEBIT,Utilities
+2026-05-10,Amazon Mrktplace,1563.03,DEBIT,Shopping
+2026-05-10,Loan Bill,1503.74,DEBIT,Interest-Payments
+2026-05-10,Uber,1708.8,DEBIT,Transport
+2026-05-10,Credit Card Bill,599.05,DEBIT,Interest-Payments
+2026-05-10,Amazon Mrktplace,768.23,DEBIT,Shopping
+2026-05-10,Flipkart,1804.31,DEBIT,Shopping
+2026-05-10,Credit Card Bill,957.28,DEBIT,Interest-Payments
+2026-05-10,Swiggy,1358.14,DEBIT,Take-out
+2026-05-10,Zomato,1599.92,DEBIT,Take-out
+2026-05-11,CityFlo,1088.12,DEBIT,Transport
+2026-05-11,Big Bazar Retail,847.3,DEBIT,Groceries
+2026-05-11,Big Bazar Retail,1769.59,DEBIT,Groceries
+2026-05-11,Ram's General store,298.21,DEBIT,Groceries
+2026-05-11,Ola,1087.18,DEBIT,Transport
+2026-05-11,Flipkart,1240.85,DEBIT,Shopping
+2026-06-03,Swiggy,630.77,DEBIT,Take-out
+2026-06-03,Swiggy,307.06,DEBIT,Take-out
+2026-06-03,Flipkart,1319.52,DEBIT,Shopping
+2026-06-03,Fresh Fruits & Veg Co.,601.9,DEBIT,Groceries
+2026-06-03,Big Bazar Retail,866.17,DEBIT,Groceries
+2026-06-03,Ram's General store,1826.21,DEBIT,Groceries
+2026-06-03,Zomato,645.38,DEBIT,Take-out
+2026-06-03,Swiggy,1075.74,DEBIT,Take-out
+2026-06-03,Ram's General store,1362.28,DEBIT,Groceries
+2026-06-03,Big Bazar Retail,643.71,DEBIT,Groceries
+2026-06-03,Amazon Mrktplace,1714.12,DEBIT,Shopping
+2026-06-03,Zomato,270.22,DEBIT,Take-out
+2026-06-03,Credit Card Bill,924.76,DEBIT,Interest-Payments
+2026-06-03,Flipkart,726.31,DEBIT,Shopping
+2026-06-03,Ola,1673.18,DEBIT,Transport
+2026-06-04,Gas,1010.83,DEBIT,Utilities
+2026-06-04,Ram's General store,1422.97,DEBIT,Groceries
+2026-06-04,Ola,1247.36,DEBIT,Transport
+2026-06-04,Amazon Mrktplace,1255.72,DEBIT,Shopping
+2026-06-04,Flipkart,1129.68,DEBIT,Shopping
+2026-06-04,Zomato,1631.53,DEBIT,Take-out
+2026-06-04,Big Bazar Retail,493.4,DEBIT,Groceries
