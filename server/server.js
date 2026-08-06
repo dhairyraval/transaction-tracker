@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
-import transactionsRouter from "./routes/transactionRoutes.js"
+import transactionsRouter from "./routes/transactionRoutes.js";
+import summaryRouter from "./routes/summaryRoutes.js";
 import { connectDB } from "./config/db.js";
 // const cors = require('cors');
 
@@ -15,6 +16,7 @@ connectDB();
 app.use(express.json());
 
 app.use("/api/transactions", transactionsRouter)
+app.use("/api/summary", summaryRouter)
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {

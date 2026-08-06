@@ -95,34 +95,68 @@ export async function createTransaction(req, res){
   let currLineNumber = 1;
   const skippedRows = [];
 
-  const stream = createReadStream(req.file.path).pipe(parse({ columns: true, skip_empty_lines: true, trim: true }));
+  const stream = createReadStream(req.file.path).pipe(parse({ columns: true, skip_empty_lines: true, trim: true, relax_column_count: true, relax_column_count_less: true }));
 
   stream.on("data", async (row) => {
     currLineNumber++;
-
     // error handling
-    if (!row.date || isNaN(Date.parse(row.date))){
-      skippedRows.push({ line: currLineNumber, reason: 'Invalid or missing date', rowData: row });
+
+    // if (Object.keys(row).length < 5){
+    //   skippedRows.push({ line: currLineNumber, reason: 'Missing Column data', rowData: row });
+    //   return;
+    // }
+
+    // regex for validating date format
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if (!row.Date || !dateRegex.test(row.Date.trim())){
+      skippedRows.push({ line: currLineNumber, reason: 'Missing or Invalid Date Format', rowData: row });
       return;
     }
-    if (!row.amount || isNaN(Number(row.amount))){
+
+    const [year, month, day] = row.Date.trim().split('-').map(Number);
+    const parsedDate = new Date(Date.UTC(year, month - 1, day));
+
+    const isValidCalendarDate = 
+      parsedDate.getUTCFullYear() === year &&
+      parsedDate.getUTCMonth() === month - 1 &&
+      parsedDate.getUTCDate() === day;
+
+    if (!isValidCalendarDate) {
+      skippedRows.push({ line: currLineNumber, reason: 'Non-existent calendar date', rowData: row });
+      return;
+    }
+    if (!row.Amount || isNaN(Number(row.Amount))){
       skippedRows.push({ line: currLineNumber, reason: 'Invalid amount', rowData: row});
       return;
     }
-    if (!row.type || (row.type !== "CREDIT" && row.type !== "DEBIT")){
+    if(Number(row.Amount) < 0){
+      skippedRows.push({ line: currLineNumber, reason: 'Amount cannot be less than 0', rowData: row});
+      return;
+    }
+    if (!row.Type || (row.Type.toUpperCase() !== "CREDIT" && row.Type.toUpperCase() !== "DEBIT")){
       skippedRows.push({line: currLineNumber, reason: 'Invalid type', rowData: row});
       return;
     }
-    if(!row.description || row.description.trim() === ''){
+    if(!row.Description || row.Description.trim() === ''){
       skippedRows.push({line: currLineNumber, reason: 'Invalid description', rowData: row});
       return;
     }
-    if(!row.category || row.category.trim() === ''){
+    if(!row.Category || row.Category.trim() === ''){
       skippedRows.push({line: currLineNumber, reason: 'Invalid category', rowData: row});
       return;
     }
 
-    batch.push(row);
+    // batch.push(row);
+
+    batch.push({
+      date: row.Date,
+      amount: Number(row.Amount), 
+      type: row.Type.toUpperCase(),
+      description: row.Description,
+      category: row.Category
+    });
+
     if (batch.length >= BATCH_SIZE) {
       stream.pause();
       try {

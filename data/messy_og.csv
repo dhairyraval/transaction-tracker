@@ -1,0 +1,105 @@
+Date,Description,Amount,Type,Category
+2025-07-01,Salary credited from Cyphersol Technologies,92000.00,CREDIT,Salary
+2025-07-01,House rent transfer to landlord,24000.00,DEBIT,Rent
+2025-07-02,DMart Andheri West,1840.25,DEBIT,Groceries
+2025-07-02,Swiggy order,445.00,DEBIT,Take-out
+2025-07-03,Uber ride,268.40,DEBIT,Transport
+2025-07-03,Amazon.in order,,DEBIT,Shopping
+2025-07-04,Netflix subscription,abc,DEBIT,Entertainment
+2025-07-04,Jio postpaid bill,N/A,DEBIT,Utilities
+2025-07-05,Refund adjustment entry,-500.00,DEBIT,Shopping
+
+2025-07-05,BigBasket order,2310.75,DEBIT,Groceries
+2025-07-06,HP Petrol Pump,2000.00,DEBIT,Transport
+2025-02-30,Zomato order,612.00,DEBIT,Take-out
+2025-13-05,PVR Cinemas,780.00,DEBIT,Entertainment
+05/07/2025,Croma Electronics,5400.00,DEBIT,Shopping
+July 6 2025,Mumbai Metro recharge,300.00,DEBIT,Transport
+2025-07-07,MSEB electricity bill,1620.00,DEBIT,Utilities
+2025-07-07,Cafe Coffee Day,310.00,DEBIT,Take-out
+2025-07-08,HDFC Home Loan EMI,12500.00,PAYMENT,Loan-Payments
+2025-07-08,Cashback from Swiggy,120.00,credit,Refund
+2025-07-09,Ola Cabs,410.00,,Transport
+2025-07-09,,899.00,DEBIT,Shopping
+2025-07-10,Reliance Fresh,1275.50,DEBIT,
+2025-07-10,Spotify Premium,199.00,DEBIT,Entertainment
+2025-07-11,Dominos Pizza,649.00,DEBIT,Take-out
+2025-07-11,Truncated row here,500.00
+  2025-07-12  ,  Myntra order  ,  1450.00  ,  DEBIT  ,  Shopping  
+
+2025-07-12,Mahanagar Gas bill,740.00,DEBIT,Utilities
+2025-07-13,Nature's Basket,1980.00,DEBIT,Groceries
+2025-07-13,Airtel Fibre broadband,1099.00,DEBIT,Utilities
+2025-07-14,Decathlon Powai,3200.00,DEBIT,Shopping
+2025-07-14,Decathlon Powai,3200.00,DEBIT,Shopping
+2025-07-15,Refund from Amazon.in,1299.00,CREDIT,Refund
+2025-07-16,DMart Andheri West,1368.13,DEBIT,Groceries
+2025-07-16,Swiggy order,700.62,DEBIT,Take-out
+2025-07-16,Uber ride,156.64,DEBIT,Transport
+2025-07-17,Amazon.in order,1099.71,DEBIT,Shopping
+2025-07-17,Netflix subscription,299.24,DEBIT,Entertainment
+2025-07-17,BigBasket order,1374.10,DEBIT,Groceries
+2025-07-18,Zomato order,723.88,DEBIT,Take-out
+2025-07-18,Ola Cabs,341.66,DEBIT,Transport
+2025-07-18,DMart Andheri West,1171.93,DEBIT,Groceries
+2025-07-19,Swiggy order,472.86,DEBIT,Take-out
+2025-07-19,Uber ride,380.35,DEBIT,Transport
+2025-07-19,Amazon.in order,760.74,DEBIT,Shopping
+2025-07-20,Netflix subscription,155.04,DEBIT,Entertainment
+2025-07-20,BigBasket order,1124.16,DEBIT,Groceries
+2025-07-20,Zomato order,841.30,DEBIT,Take-out
+2025-07-21,Ola Cabs,395.73,DEBIT,Transport
+2025-07-21,DMart Andheri West,1544.56,DEBIT,Groceries
+2025-07-21,Swiggy order,502.99,DEBIT,Take-out
+2025-07-22,Uber ride,195.72,DEBIT,Transport
+2025-07-22,Amazon.in order,1250.61,DEBIT,Shopping
+2025-07-22,Netflix subscription,140.22,DEBIT,Entertainment
+
+2025-07-23,BigBasket order,2415.66,DEBIT,Groceries
+2025-07-23,Zomato order,880.98,DEBIT,Take-out
+2025-07-23,Ola Cabs,384.11,DEBIT,Transport
+2025-07-24,DMart Andheri West,1775.49,DEBIT,Groceries
+2025-07-24,Swiggy order,473.20,DEBIT,Take-out
+2025-07-24,Uber ride,379.72,DEBIT,Transport
+2025-07-25,Amazon.in order,1358.06,DEBIT,Shopping
+2025-07-25,Netflix subscription,130.29,DEBIT,Entertainment
+2025-07-25,BigBasket order,2579.90,DEBIT,Groceries
+2025-07-26,Zomato order,474.86,DEBIT,Take-out
+2025-07-26,Ola Cabs,281.49,DEBIT,Transport
+2025-07-26,DMart Andheri West,1583.69,DEBIT,Groceries
+2025-07-27,Swiggy order,384.27,DEBIT,Take-out
+2025-07-27,Uber ride,153.46,DEBIT,Transport
+2025-07-27,Amazon.in order,1828.13,DEBIT,Shopping
+2025-07-28,Netflix subscription,127.48,DEBIT,Entertainment
+2025-07-28,BigBasket order,1732.95,DEBIT,Groceries
+2025-07-28,Zomato order,539.86,DEBIT,Take-out
+2025-07-29,Ola Cabs,345.76,DEBIT,Transport
+2025-07-29,DMart Andheri West,2393.40,DEBIT,Groceries
+2025-07-29,Swiggy order,449.38,DEBIT,Take-out
+2025-07-30,Uber ride,251.49,DEBIT,Transport
+
+2025-07-30,Amazon.in order,1913.29,DEBIT,Shopping
+2025-07-30,Netflix subscription,240.52,DEBIT,Entertainment
+2025-07-31,BigBasket order,1605.55,DEBIT,Groceries
+2025-07-31,Zomato order,883.52,DEBIT,Take-out
+2025-07-31,Ola Cabs,462.03,DEBIT,Transport
+2025-08-01,DMart Andheri West,1694.12,DEBIT,Groceries
+2025-08-01,Swiggy order,397.67,DEBIT,Take-out
+2025-08-01,Uber ride,302.77,DEBIT,Transport
+2025-08-02,Amazon.in order,1643.57,DEBIT,Shopping
+2025-08-02,Netflix subscription,255.47,DEBIT,Entertainment
+2025-08-02,BigBasket order,2775.45,DEBIT,Groceries
+2025-08-03,Zomato order,971.62,DEBIT,Take-out
+2025-08-03,Ola Cabs,406.46,DEBIT,Transport
+2025-08-03,DMart Andheri West,1404.88,DEBIT,Groceries
+2025-08-04,Swiggy order,495.49,DEBIT,Take-out
+2025-08-04,Uber ride,236.08,DEBIT,Transport
+2025-08-04,Amazon.in order,1117.16,DEBIT,Shopping
+2025-08-05,Netflix subscription,213.53,DEBIT,Entertainment
+2025-08-05,BigBasket order,2235.80,DEBIT,Groceries
+2025-08-05,Zomato order,576.92,DEBIT,Take-out
+2025-08-06,Ola Cabs,217.50,DEBIT,Transport
+2025-08-06,DMart Andheri West,1579.84,DEBIT,Groceries
+2025-08-06,Swiggy order,498.90,DEBIT,Take-out
+2025-08-07,Uber ride,375.41,DEBIT,Transport
+2025-08-07,Amazon.in order,1205.09,DEBIT,Shopping
