@@ -17,7 +17,7 @@ num_trans = 5000
 num_months = 12
 year = 2026
 num_days_month = 30 # assuming all months to be of 30 days
-cols = ['Date', 'Description', 'Amount', 'Type', 'Category']
+cols = ['date', 'description', 'amount', 'type', 'category']
 debit_cats = [
     ["Interest-Payments", "Loan Bill", "Credit Card Bill"],
     ["Groceries", "Big Bazar Retail", "Ram's General store", "Fresh Fruits & Veg Co."],
