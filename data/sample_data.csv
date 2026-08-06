@@ -1,4 +1,4 @@
-Date,Description,Amount,Type,Category
+date,description,amount,type,category
 2026-01-01,Salary credited from CypherSOL,60000.0,CREDIT,Salary
 2026-01-01,Zomato,1453.06,DEBIT,Take-out
 2026-01-01,CityFlo,1780.05,DEBIT,Transport
