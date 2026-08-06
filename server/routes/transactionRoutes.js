@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { createTransaction, deleteTransaction, getAllTransactions, updateTransaction } from "../controllers/transactionsController.js";
+import { createTransaction, deleteTransaction, getAllTransactions, getTransaction, updateTransaction } from "../controllers/transactionsController.js";
 
 const router = express.Router();
 
@@ -8,6 +8,7 @@ const router = express.Router();
 const upload = multer({ dest: '../uploads/' });
 
 router.get("/", getAllTransactions);
+router.get("/:id", getTransaction);
 router.post("/upload", upload.single('csvFile'), createTransaction);
 router.put("/:id", updateTransaction);
 router.delete("/:id", deleteTransaction);

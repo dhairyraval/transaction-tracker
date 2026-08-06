@@ -39,7 +39,7 @@ transactionSchema.index({ type: 1, amount: -1 });
 transactionSchema.index({ category: 1, date: -1 });
 transactionSchema.index({ category: 1, amount: -1 });
 
-transactionSchema.index({ description: 'text', category: 'text' });
+transactionSchema.index({ description: 'text'});
 
 const Transaction = mongoose.model("Transaction", transactionSchema);
 

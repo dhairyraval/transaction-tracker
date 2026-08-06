@@ -1,15 +1,86 @@
 import fs, { createReadStream } from "fs";
-
+import mongoose from "mongoose";
 import Transaction from "../models/Transaction.js";
 import { parse } from "csv-parse";
 
 export async function getAllTransactions(req, res){
   try {
-    const transactions = await Transaction.find()
-    res.status(200).json(transactions)
+    const { 
+      page = 1,
+      limit = 10,
+      startDate,
+      endDate, 
+      category, 
+      type,
+      search,
+      sortBy = 'date',
+      sortOrder = 'desc'
+    } = req.query
+
+    // dynamic filter obj
+    const filter = {}
+
+    // adding filters based on query params
+    if(category){ filter.category = category; }
+    if(type){ filter.type = type; }
+
+    // text search filter using regex + options
+    if(search && search.trim() !== '') {
+      filter.description = { $regex: search.trim(), $options: 'i' };
+
+      // --- for case sensitive and full word matches ---
+      // filter.$text = { $search: search };
+    }
+
+    if(startDate || endDate){
+      filter.date = {}
+      if(startDate){ filter.date.$gte = new Date(startDate) }
+      if(endDate){ filter.date.$lte = new Date(endDate) }
+    }
+
+    // sorting & pagination logic
+    const sort = {[sortBy]: sortOrder === 'asc' ? 1 : -1};
+    const skip = (page - 1) * limit;
+
+    const[transations, transactionCount] = await Promise.all([
+      Transaction.find(filter).sort(sort).skip(skip).limit(limit),
+      Transaction.countDocuments(filter)
+    ]);
+
+    res.status(200).json({
+      data: transations,
+      pagination: {
+        totalItems: transactionCount,
+        totalPages: Math.ceil(transactionCount/limit),
+        currPage: page,
+        limit: limit
+      }
+    });
 
   } catch (error) {
     console.error("Error in getAllTransactions controller", error);
+    res.status(500).json({message:"Internal server error"});
+  }
+}
+
+export async function getTransaction(req, res){
+  const transactionID = req.params.id;
+
+  // Validating if the given ID exists & is valid
+  if (!transactionID) return res.status(400).json({message:"Bad request -- missing id"});
+  if (!mongoose.Types.ObjectId.isValid(transactionID)) return res.status(400).json({ message: `Invalid ID format: ${transactionID}` });
+  try {
+    const transaction = await Transaction.findById(transactionID);
+    // if transaction with given ID does not exist in DB
+    if (!transaction) {
+      console.log(`Transaction not found - transactionID: $(transactionID)`);
+      res.status(404).json({ message:`Transaction not found -- transactionID: ${transactionID}` });
+    }
+    // transaction found!
+    res.status(200).json(transaction)
+
+  } catch (error) {
+    console.error("Error in getTransaction controller", error);
     res.status(500).json({message:"Internal server error"});
   }
 }
@@ -83,10 +154,58 @@ export async function createTransaction(req, res){
   });
 }
 
-export function updateTransaction(req, res){
-  res.status(200).json({message: "transaction updated succesfully!"});
+export async function updateTransaction(req, res){
+  const transactionID = req.params.id;
+
+  // Validating if the given ID exists & is valid
+  if (!transactionID) return res.status(400).json({message:"Bad request -- missing id"});
+  if (!mongoose.Types.ObjectId.isValid(transactionID)) return res.status(400).json({ message: `Invalid ID format: ${transactionID}` });
+
+  // Validate empty body
+  if (!req.body || Object.keys(req.body).length === 0) {
+    return res.status(400).json({ message: "No fields provided to update" });
+  }
+
+  try {
+    const transaction = await Transaction.findByIdAndUpdate(
+      transactionID,
+      req.body, // Mongoose only updates fields present in req.body
+      { returnDocument: "after", runValidators: true }
+    );
+    // if transaction with given ID does not exist in DB
+    if (!transaction) {
+      console.log(`Transaction not found - transactionID: ${transactionID}`);
+      res.status(404).json({ message:`Could not update -- Transaction with transactionID: ${transactionID} not found` });
+    }
+
+    // transaction updated successfully
+    res.status(200).json(transaction)
+
+  } catch (error) {
+    console.error("Error in updateTransaction controller", error);
+    res.status(500).json({message:"Internal server error"});
+  }
 }
 
-export function deleteTransaction(req, res){
-  res.status(200).json({message: "transaction deleted succesfully!"});
+export async function deleteTransaction(req, res){
+  const transactionID = req.params.id;
+
+  // Validating if the given ID exists & is valid
+  if (!transactionID) return res.status(400).json({message:"Bad request -- missing id"});
+  if (!mongoose.Types.ObjectId.isValid(transactionID)) return res.status(400).json({ message: `Invalid ID format: ${transactionID}` });
+
+  try {
+    const transaction = await Transaction.findByIdAndDelete(transactionID);
+    // if transaction with given ID does not exist in DB
+    if (!transaction) {
+      console.log(`Not deleted as Transaction with transactionID: ${transactionID} not found`);
+      res.status(404).json({ message:`Could not delete -- Transaction with transactionID: ${transactionID} not found` });
+    }
+    // transaction deleted from DB
+    res.status(200).json(transaction)
+
+  } catch (error) {
+    console.error("Error in updateTransaction controller", error);
+    res.status(500).json({message:"Internal server error"});
+  }
 }

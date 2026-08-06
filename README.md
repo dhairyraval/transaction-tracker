@@ -15,4 +15,4 @@
 * ```transactionSchema.index({ category: 1, amount: -1 });```
     * Group by category + sort by amount (desc.)
 * ```transactionSchema.index({ description: 'text', category: 'text' });```
-    * Searchable index for both description and category -- used in search bar
+    * Searchable index for description -- used in search bar
