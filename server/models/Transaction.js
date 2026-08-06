@@ -18,6 +18,7 @@ const transactionSchema = new mongoose.Schema({
     },
     type: {
         type: String,
+        enum: ["CREDIT", "DEBIT"],
         required: true,
     },
     category: {
@@ -25,6 +26,20 @@ const transactionSchema = new mongoose.Schema({
         required: true,
     }
 });
+
+// --- INDEXES ---
+// Descriptions added in README.md
+
+transactionSchema.index({ date: -1 });
+transactionSchema.index({ amount: -1 });
+
+transactionSchema.index({ type: 1, date: -1 });
+transactionSchema.index({ type: 1, amount: -1 });
+
+transactionSchema.index({ category: 1, date: -1 });
+transactionSchema.index({ category: 1, amount: -1 });
+
+transactionSchema.index({ description: 'text', category: 'text' });
 
 const Transaction = mongoose.model("Transaction", transactionSchema);
 
