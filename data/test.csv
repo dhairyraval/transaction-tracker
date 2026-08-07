@@ -1,0 +1,9 @@
+Date,Description,Amount,Type,Category
+2024-01-01,Netflix subscription,362.51,DEBIT,Entertainment
+2024-01-01,DMart Andheri West,256.66,DEBIT,Groceries
+2024-01-01,BigBasket order,368.86,DEBIT,Groceries
+2024-01-01,BigBasket order,421.14,DEBIT,Groceries
+2024-01-01,House rent transfer to landlord,24000.00,DEBIT,Rent
+2024-01-01,Airtel Fibre broadband,815.14,DEBIT,Utilities
+2024-01-02,Steam games purchase,340.91,DEBIT,Entertainment
+2024-02-05,Salary,80000,CREDIT,Salary
