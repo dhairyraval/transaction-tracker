@@ -101,11 +101,7 @@ export async function createTransaction(req, res){
     currLineNumber++;
     // error handling
 
-    // if (Object.keys(row).length < 5){
-    //   skippedRows.push({ line: currLineNumber, reason: 'Missing Column data', rowData: row });
-    //   return;
-    // }
-
+    // Date validation
     // regex for validating date format
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -115,7 +111,9 @@ export async function createTransaction(req, res){
     }
 
     const [year, month, day] = row.Date.trim().split('-').map(Number);
-    const parsedDate = new Date(Date.UTC(year, month - 1, day));
+
+    // Date.UTC creates a date obj while auto correcting out of bound dates
+    const parsedDate = new Date(Date.UTC(year, month - 1, day));  // month - 1 as Date uses months indexed from 0
 
     const isValidCalendarDate = 
       parsedDate.getUTCFullYear() === year &&
@@ -126,6 +124,8 @@ export async function createTransaction(req, res){
       skippedRows.push({ line: currLineNumber, reason: 'Non-existent calendar date', rowData: row });
       return;
     }
+
+    // Amount validation
     if (!row.Amount || isNaN(Number(row.Amount))){
       skippedRows.push({ line: currLineNumber, reason: 'Invalid amount', rowData: row});
       return;
@@ -134,20 +134,26 @@ export async function createTransaction(req, res){
       skippedRows.push({ line: currLineNumber, reason: 'Amount cannot be less than 0', rowData: row});
       return;
     }
+
+    // Type validation
     if (!row.Type || (row.Type.toUpperCase() !== "CREDIT" && row.Type.toUpperCase() !== "DEBIT")){
       skippedRows.push({line: currLineNumber, reason: 'Invalid type', rowData: row});
       return;
     }
+
+    // Description validation
     if(!row.Description || row.Description.trim() === ''){
       skippedRows.push({line: currLineNumber, reason: 'Invalid description', rowData: row});
       return;
     }
+
+    // Category validation
     if(!row.Category || row.Category.trim() === ''){
       skippedRows.push({line: currLineNumber, reason: 'Invalid category', rowData: row});
       return;
     }
 
-    // batch.push(row);
+    // batch.push(row); // not used as we convert the col names to match mongoose schema 
 
     batch.push({
       date: row.Date,
