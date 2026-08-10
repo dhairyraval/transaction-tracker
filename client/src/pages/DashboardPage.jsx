@@ -20,9 +20,10 @@ const DashboardPage = () => {
         const res = await axios.get("http://localhost:5002/api/summary");
         console.log(res.data);
         setSummary(res.data);
-      } catch (error) {
-        console.error("Error fetching summary", error);
-        toast.error("Failed to import summary");
+      } catch (err) {
+        const errorMessage = err.message || 'Upload failed. Please try again.';
+        console.error("Error fetching summary", err);
+        toast.error(errorMessage);
       } finally {
         setLoading(false);
       }
