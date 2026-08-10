@@ -226,7 +226,6 @@ export async function updateTransaction(req, res){
     res.status(500).json({message:"Internal server error"});
   }
 }
-
 export async function deleteTransaction(req, res){
   const transactionID = req.params.id;
 
