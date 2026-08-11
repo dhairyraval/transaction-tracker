@@ -1,8 +1,9 @@
 // import React from 'react'
 import { useEffect, useState } from 'react';
-import NavBar from '../components/NavBar';
 import axios from "axios";
 import toast from 'react-hot-toast';
+
+import NavBar from '../components/NavBar';
 import Card from '../components/Card';
 import { formatAmount } from '../lib/utils';
 import CustomDonutChart from '../components/CustomDonutChart';
@@ -18,11 +19,10 @@ const DashboardPage = () => {
     const fetchTransactions = async () => {
       try {
         const res = await axios.get("http://localhost:5002/api/summary");
-        console.log(res.data);
         setSummary(res.data);
       } catch (err) {
         const errorMessage = err.message || 'Upload failed. Please try again.';
-        console.error("Error fetching summary", err);
+        console.error(errorMessage);
         toast.error(errorMessage);
       } finally {
         setLoading(false);

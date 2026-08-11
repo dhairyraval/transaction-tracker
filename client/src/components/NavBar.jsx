@@ -1,6 +1,6 @@
 // import React from 'react'
 import { Link } from 'react-router'
-import { PlusIcon } from 'lucide-react'
+import { ArrowRightLeftIcon, PlusIcon } from 'lucide-react'
 
 const NavBar = () => {
   return <header className='bg-base-300 border-b border-base-content/10'>
@@ -9,6 +9,12 @@ const NavBar = () => {
         <Link to={'/'}>
           <h1 className='text-3xl font-bold text-primary font-mono tracking-tight'>TransactionTracker</h1>
         </Link>
+        <div className='flex items-center gap-4'>
+          <Link to={'/transactions'} className='btn btn-primary'>
+            <ArrowRightLeftIcon className='size-5'/>
+            <span>View Transactions</span>
+          </Link>
+        </div>
         <div className='flex items-center gap-4'>
           <Link to={'/upload'} className='btn btn-primary'>
             <PlusIcon className='size-5' />
