@@ -339,6 +339,8 @@ Returns an array of unique transaction categories
 - Part 3 (FrontEnd)
     - Not using useParams (react-router-dom) on TransactionPage (Page which shows all trasaction in a table)
     - User cannot send query with custom parameters directly to front end (API call works with custom params)
+    - Using `// eslint-disable-next-line react-hooks/set-state-in-effect` in `client/src/components/EditModal.jsx` (line 16)
+    - Using `// eslint-disable-next-line react-hooks/exhaustive-deps` in `client/src/components/TransactionSearchFilter.jsx` (line 23)
 
 
 

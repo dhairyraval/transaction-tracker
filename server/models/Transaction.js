@@ -1,8 +1,4 @@
 import mongoose from "mongoose";
-
-// 1. create schema
-// 2. create model based off schema
-
 const transactionSchema = new mongoose.Schema({
     date: {
         type: Date,

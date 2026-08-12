@@ -13,6 +13,7 @@ const EditModal = ({ transaction, onSuccess }) => {
   // Populate inputs when a transaction is selected
   useEffect(() => {
     if (transaction) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         description: transaction.description || '',
         amount: transaction.amount || '',
