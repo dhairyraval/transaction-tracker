@@ -2,7 +2,7 @@
 
 ## Live Demo
 Hosted on Render.com
-* Live Demo: [here](https://transaction-tracker-xd2i.onrender.com/)
+* Live Demo: [here](https://transaction-tracker-xd2i.onrender.com/) (First start may take a few minutes)
 
 ## Setup Instructions
 
