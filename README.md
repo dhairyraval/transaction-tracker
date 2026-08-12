@@ -1,3 +1,7 @@
+# Transaction Tracker
+
+## Setup Instructions
+
 ### Index descriptions:
 * ```transactionSchema.index({ date: -1 });```
     * Chronological sorting by date (descending)

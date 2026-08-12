@@ -1,12 +1,31 @@
 import toast from 'react-hot-toast';
 import { FunnelIcon } from "lucide-react";
 
+import { useState, useEffect } from 'react';
+
 
 const TransactionSearchFilter = ({ categories = [], onApplyFilters }) => {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (onApplyFilters) {
+        onApplyFilters((prev) => ({
+          ...prev,
+          search: searchTerm,
+        }));
+      }
+    }, 300);
+
+    // Cleanup: clears timeout if user types again before 300ms finishes
+    return () => clearTimeout(handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 2. Extract form values using the inputs' "name" attributes
     const formData = new FormData(e.currentTarget);
     const filterData = {
       startDate: formData.get('startDate'), // "2026-08-01" or ""
@@ -16,7 +35,7 @@ const TransactionSearchFilter = ({ categories = [], onApplyFilters }) => {
     };
 
     if (onApplyFilters) {
-      onApplyFilters(filterData);      
+      onApplyFilters(filterData);
     }
 
     console.log('Submitted Filters:', filterData);
@@ -31,7 +50,13 @@ const TransactionSearchFilter = ({ categories = [], onApplyFilters }) => {
   return (
     <div className="flex items-center justify-center gap-4 py-3 w-full">
       <label className="input input-bordered flex items-center gap-2 w-[70%]">
-        <input type="text" className="grow" placeholder=" Search..." />
+        <input
+          type="text"
+          className="grow"
+          placeholder=" Search..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
