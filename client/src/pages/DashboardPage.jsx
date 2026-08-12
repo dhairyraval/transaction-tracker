@@ -17,7 +17,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const res = await api.get("http://localhost:5002/api/summary");
+        const res = await api.get("/summary");
         setSummary(res.data);
       } catch (err) {
         const errorMessage = err.message || 'Upload failed. Please try again.';

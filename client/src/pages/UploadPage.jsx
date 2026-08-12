@@ -42,7 +42,7 @@ const UploadPage = () => {
     formData.append('csvFile', file);
 
     try {
-      const res = await api.post('http://localhost:5002/api/transactions/upload', formData, {
+      const res = await api.post('transactions/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

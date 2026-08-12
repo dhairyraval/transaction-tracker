@@ -33,7 +33,7 @@ const EditModal = ({ transaction, onSuccess }) => {
     e.preventDefault();
     try {
       await api.put(
-        `http://localhost:5002/api/transactions/${transaction._id}`,
+        `transactions/${transaction._id}`,
         formData
       );
       toast.success('Transaction updated successfully!');

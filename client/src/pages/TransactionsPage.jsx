@@ -74,7 +74,7 @@ const TransactionsPage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await api.get('http://localhost:5002/api/categories');
+        const res = await api.get('/categories');
         // Handle response payload shape: { categoryArray: [...] }
         setCategories(res.data.categoryArray || []);
       } catch (err) {
@@ -107,9 +107,7 @@ const TransactionsPage = () => {
         params.append('sortBy', sortConfig.field);
         params.append('sortOrder', sortConfig.order);
 
-        const res = await api.get(`http://localhost:5002/api/transactions/?${params}`);
-        console.log(`call: http://localhost:5002/api/transactions/?${params}`);
-
+        const res = await api.get(`/transactions/?${params}`);
         if (isMounted) {
           setTableData(res.data.data);
           setPagination(res.data.pagination);
