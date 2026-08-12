@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import api from "../lib/axios";
 import toast from 'react-hot-toast';
 
 import NavBar from "../components/NavBar"
@@ -74,7 +75,7 @@ const TransactionsPage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get('http://localhost:5002/api/categories');
+        const res = await api.get('http://localhost:5002/api/categories');
         // Handle response payload shape: { categoryArray: [...] }
         setCategories(res.data.categoryArray || []);
       } catch (err) {
@@ -107,7 +108,7 @@ const TransactionsPage = () => {
         params.append('sortBy', sortConfig.field);
         params.append('sortOrder', sortConfig.order);
 
-        const res = await axios.get(`http://localhost:5002/api/transactions/?${params}`);
+        const res = await api.get(`http://localhost:5002/api/transactions/?${params}`);
         console.log(`call: http://localhost:5002/api/transactions/?${params}`);
 
         if (isMounted) {

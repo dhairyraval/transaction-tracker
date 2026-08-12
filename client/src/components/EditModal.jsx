@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from 'axios';
 import toast from 'react-hot-toast';
 
 const EditModal = ({ transaction, onSuccess }) => {
@@ -32,7 +32,7 @@ const EditModal = ({ transaction, onSuccess }) => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(
+      await api.put(
         `http://localhost:5002/api/transactions/${transaction._id}`,
         formData
       );

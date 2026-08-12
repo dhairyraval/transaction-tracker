@@ -1,10 +1,11 @@
 import axios from "axios";
+import api from "../lib/axios";
 import toast from "react-hot-toast";
 
 const DeleteModal = ({ transactionId, onSuccess }) => {
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5002/api/transactions/${transactionId}`);
+      await api.delete(`http://localhost:5002/api/transactions/${transactionId}`);
       toast.success("Transaction deleted!");
       document.getElementById('delete_modal').close();
       if (onSuccess) onSuccess(); // Trigger table re-fetch

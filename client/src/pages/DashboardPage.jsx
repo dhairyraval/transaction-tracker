@@ -1,6 +1,7 @@
 // import React from 'react'
 import { useEffect, useState } from 'react';
-import axios from "axios";
+// import axios from "axios";
+import api from "../lib/axios";
 import toast from 'react-hot-toast';
 
 import NavBar from '../components/NavBar';
@@ -18,7 +19,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const res = await axios.get("http://localhost:5002/api/summary");
+        const res = await api.get("http://localhost:5002/api/summary");
         setSummary(res.data);
       } catch (err) {
         const errorMessage = err.message || 'Upload failed. Please try again.';

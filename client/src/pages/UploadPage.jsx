@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import api from "../lib/axios";
 
 import toast from 'react-hot-toast';
 
@@ -42,7 +43,7 @@ const UploadPage = () => {
     formData.append('csvFile', file);
 
     try {
-      const res = await axios.post('http://localhost:5002/api/transactions/upload', formData, {
+      const res = await api.post('http://localhost:5002/api/transactions/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
