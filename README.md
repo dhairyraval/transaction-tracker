@@ -37,13 +37,14 @@ Before running the application, you need to configure your environment variables
    PORT=5001
    NODE_ENV=development
    MONGO_URI= <YOUR_MONGODB_CONNECTION_STRING>
+   ```
 
 ---
 
 Don't have a mongoDB cluster setup? [Click here](https://www.mongodb.com/docs/atlas/)
 
 ## MongoDB Schema
-```
+```json
 date: {
         type: Date,
         required: true,
@@ -152,7 +153,7 @@ Returns requested transaction
 * `POST .../api/transactions/upload`
 * form-data: `csvFile: <file>`
 
-**Response (`201 OK`):**
+**Response (`201 Created`):**
 Returns list of uploaded transactions
 ```json
 {
@@ -251,7 +252,7 @@ Returns deleted transaction
 * `GET .../api/summary/`
 
 **Response (`200 OK`):**
-Returns deleted transaction
+Returns summary of transactions
 ```json
 {
     "totals": {
@@ -304,7 +305,7 @@ Returns deleted transaction
     "totalCount": 169
 }
 ```
-#### 7. GET Alll Categories
+#### 7. GET All Categories
 * **Endpoint:** `GET /api/categories`
 * **Access:** Public
 * **Description:** Get an array of all unique transaction categories
@@ -334,7 +335,7 @@ Returns an array of unique transaction categories
 
 ## Known issues & bugs
 - Part 2 (API endpoints)
-    - Endpoints will handle invalid and missing IDs, but I haven't added exprse-validators to explicitly validate query params
+    - Endpoints will handle invalid and missing IDs, but I haven't added express-validators to explicitly validate query params
 
 - Part 3 (FrontEnd)
     - Not using useParams (react-router-dom) on TransactionPage (Page which shows all trasaction in a table)
