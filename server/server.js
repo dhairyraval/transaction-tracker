@@ -17,7 +17,11 @@ const __dirname = path.resolve()
 // Middleware
 
 if (process.env.NODE_ENV !== "production") {
-  app.use(cors());
+  app.use(
+    cors({
+      origin: "http://localhost:5173",
+    })
+  );
 }
 app.use(express.json());
 
@@ -26,7 +30,7 @@ app.use("/api/summary", summaryRouter)
 app.use("/api/categories", categoryRouter)
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/dist")))
+  app.use(express.static(path.join(__dirname, "../client", "dist")))
 
   app.get("/*splat", (req, res) => {
     res.sendFile(path.join(__dirname, "../client", "dist", "index.html"))

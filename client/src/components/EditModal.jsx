@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import api from 'axios';
+import api from '../lib/axios';
 import toast from 'react-hot-toast';
 
 const EditModal = ({ transaction, onSuccess }) => {
